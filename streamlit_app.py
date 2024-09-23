@@ -29,4 +29,5 @@ if ingredients:
         session.sql(my_insert_stmt).collect()
         st.success(f"Your Smoothie is ordered!{name_on_smoothie}",icon="✅")
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response.json())
+# st.text(fruityvice_response.json())
+st.dataframe(data = fruityvice_response.json(),use_container_width = true)
