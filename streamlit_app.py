@@ -10,7 +10,7 @@ st.write("The Name on the smoothie will be", name_on_smoothie)
 st.write("Choose the fruits you want to custom smoothie")
 cnx = st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
 ingredients = st.multiselect(
     "Choose upto 5 ingredients",
     my_dataframe
